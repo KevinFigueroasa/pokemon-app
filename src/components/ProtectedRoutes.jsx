@@ -7,7 +7,7 @@ const ProtectedRoutes = () => {
 
 		// Aquí va la condición. Puede ser una condición de cualquier tipo. Lo que 
 		// Importa es que valide si el usuario está loggeado o no
-    if(true){ //userName !== "" // Poodría colocar solo la variable userName que, como no está vacia, devolverá TRUE or FALSE
+    if(userName){ //userName !== "" // Poodría colocar solo la variable userName que, como no está vacia, devolverá TRUE or FALSE
         return <Outlet />
     } else { 
         return <Navigate to='/' />
