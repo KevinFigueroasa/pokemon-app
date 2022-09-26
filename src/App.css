@@ -130,10 +130,24 @@
   background-color: #fff;
   height: 280px;
   margin-top: -60px;
-  border-radius: 50px 50px 6px 6px;
+  border-radius: 25px 25px 6px 6px;
 }
 .back-white h2 {
   padding-top: 60px;
+}
+
+/* Estilos para Detalles del pokemon */
+
+.pokemon-details-container {
+  display: flex;
+}
+
+.pokemon-details {
+  width: 50%;
+}
+
+.pokemon-movements {
+  width: 50%;
 }
 
 @media (max-width: 1320px) {

@@ -28,7 +28,7 @@ const PokemonCard = ({url}) => {
         return color
       }
 
-    console.log(getPokemon)
+    // console.log(getPokemon)
 
     return (
         <div className='pokemon-cards' style={{background: colorsFont()}}>

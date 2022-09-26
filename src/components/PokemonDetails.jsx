@@ -19,9 +19,24 @@ const PokemonDetails = () => {
     console.log(getPokemonDetails)
 
     return (
-        <div>
-            <h1>{getPokemonDetails.name}</h1>
-            <img src={getPokemonDetails.sprites?.other.dream_world.front_default} alt="" />
+        <div className='pokemon-details-container'>
+            <div className='pokemon-details'>
+                <img src={getPokemonDetails.sprites?.other.dream_world.front_default} alt="" />
+                <h1>{getPokemonDetails.name}</h1>
+                <p>Weight: {getPokemonDetails.weight}</p>
+                <p>Heigth: {getPokemonDetails.height}</p>
+            </div>
+
+            <div className='pokemon-movements'>
+                <h2>Movements</h2>
+                    <ul>
+                        {
+                                getPokemonDetails.moves?.map(move => (
+                                    <li>{move.move.name}</li>
+                                ))
+                        }
+                    </ul>
+            </div>
         </div>
     );
 };
