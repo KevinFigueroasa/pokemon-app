@@ -34,7 +34,9 @@ const PokemonCard = ({url}) => {
         <div className='pokemon-cards' style={{background: colorsFont()}}>
             <div className='pokemon-data'
             onClick={() => navigate(`/pokemons/${getPokemon.id}`)}>
-                <img src={getPokemon.sprites?.other.dream_world.front_default} alt="" />
+                <img src={getPokemon.sprites?.other.dream_world.front_default === null ?
+                    getPokemon.sprites?.other["official-artwork"].front_default : getPokemon.sprites?.other.dream_world.front_default
+                } alt="" />
                 <div className='back-white'>
                     <h2>{getPokemon.name}</h2>
                     <h4>Type: {getPokemon.types?.[0].type.name}</h4>

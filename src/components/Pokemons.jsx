@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
 import {currentPage} from '../store/slices/currentPage.slice';
+import { numPageNone } from '../store/slices/numPageNone.Slice';
 
 const Pokemons = () => {
 
@@ -34,20 +35,36 @@ const Pokemons = () => {
         }
     }
 
+    
     const [nPage, setNPage] = useState(1)
     const page = useSelector(state => state.currentPage)
     const pokemonsPerPage = useSelector(state => state.pokemonsPerPage)
     const [nPage2, setNPage2] = useState(9)
+    const numPageNoneSelect = useSelector(state => state.numPageNoneIt)
+    
     // const pokemonsPerPage = 16 Esto lo llevo a un satate de redux
     const lastPokemonIndex = page * pokemonsPerPage
     const firstPokemonIndex = lastPokemonIndex - pokemonsPerPage
-    const pokemonsPaginated = getPokemons.slice(firstPokemonIndex, lastPokemonIndex)
+    const pokemonsPaginated = getPokemons?.slice(firstPokemonIndex, lastPokemonIndex)
     const totalPage = Math.ceil(getPokemons.length / pokemonsPerPage) // redondea el resultado hacia Arriba al contrario de floor
+    const totalPage2 = Math.floor(getPokemons.length / pokemonsPerPage)
     const pageNumbers = []
 
-    for (let i = nPage; i <= nPage2; i++) {
-        pageNumbers.push(i)
-    }
+    // for (let i = nPage; i <= nPage2; i++) {
+    //     pageNumbers.push(i)
+    // }
+
+    if (totalPage <= 9) {
+        dispatch(numPageNone(false))
+        for (let i = 1; i <= totalPage; i++) {
+          pageNumbers.push(i);
+        } 
+      }else{
+        dispatch(numPageNone(true))
+        for (let i = nPage; i <= nPage2; i++) {
+          pageNumbers.push(i);
+        } 
+      }
 
     const prev = (npage) => {
         setNPage(nPage-5)
@@ -101,10 +118,14 @@ const Pokemons = () => {
                     }
                 </select>
             </div>
-            <button 
-            onClick={() => prev(nPage)}
-            disabled={nPage === 1}
-            >Previus Page</button>
+            {
+                numPageNoneSelect &&
+                <button 
+                onClick={() => prev(nPage)}
+                disabled={nPage === 1}
+                >Previus Page</button>
+            }
+
             {
                 pageNumbers.map(num => (
                 <button 
@@ -115,9 +136,14 @@ const Pokemons = () => {
                 </button>
                 ))
             }
-            <button onClick={() => next(nPage)}
-            disabled={totalPage <= nPage2}
-            >Next Page</button>
+            
+            {
+                numPageNoneSelect &&
+                <button onClick={() => next(nPage)}
+                disabled={totalPage2 <= nPage2}
+                >Next Page</button>
+            }
+
             <div className='pokemon-cards-container'>
                 {
                     // getPokemons.map(pokemon => ( // este còdigo estaba antes de la pàginaciòn
