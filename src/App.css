@@ -18,6 +18,9 @@
   --change-color-bg-btn: #410cde;
   --input-color-search: #4d17e2;
   --input-color-search-focus: #936dfa;
+
+  --abilities-bar-length: 0%;
+  --color-abilities-bar: rgb(21, 177, 0);
 }
 
 
@@ -122,8 +125,21 @@
 
 .principal-pokeinfo {
   display: flex;
-  justify-content: space-around;
   margin: 15px 0;
+}
+
+.principal-stats {
+  width: 100%;
+}
+
+.values {
+  color: #5B6263;
+  font-size: 18px;
+  border-right: 1px solid #D0D0D0;
+}
+
+.stats {
+  font-size: 14px;
 }
 
 .back-white {
@@ -149,6 +165,12 @@
 .pokemon-movements {
   width: 50%;
 }
+
+.abilities__item--container {
+  display: flex;
+}
+
+
 
 @media (max-width: 1320px) {
   .pokemon-cards-container {

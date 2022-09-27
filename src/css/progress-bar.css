@@ -1,0 +1,381 @@
+/* Estilos para abilities y barras */
+
+/* .abilities {
+    padding: 1em 0;
+  } */
+  
+  .abilities__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .abilities__bar,
+  .abilities__bar::after {
+    position: relative;
+    width: 120px;
+    height: 12px;
+    background-color: #5B6263;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .abilities__bar::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-abilities-bar);
+    left: -150px;
+    transition: color 0.1s, background-color 0.2s ease-in-out;
+    animation: abilities-bar-fill 0.9s ease-in-out forwards;
+  }
+  
+  
+  .abilities__bar--10::after {
+    --abilities-bar-length:10%;
+  }
+  .abilities__bar--11::after {
+    --abilities-bar-length:11%;
+  }
+  .abilities__bar--12::after {
+    --abilities-bar-length:12%;
+  }
+  .abilities__bar--13::after {
+    --abilities-bar-length:13%;
+  }
+  .abilities__bar--14::after {
+    --abilities-bar-length:14%;
+  }
+  .abilities__bar--15::after {
+    --abilities-bar-length:15%;
+  }
+  .abilities__bar--16::after {
+    --abilities-bar-length:16%;
+  }
+  .abilities__bar--17::after {
+    --abilities-bar-length:17%;
+  }
+  .abilities__bar--18::after {
+    --abilities-bar-length:18%;
+  }
+  .abilities__bar--19::after {
+    --abilities-bar-length:19%;
+  }
+  .abilities__bar--20::after {
+    --abilities-bar-length:20%;
+  }
+  .abilities__bar--21::after {
+    --abilities-bar-length:21%;
+  }
+  .abilities__bar--22::after {
+    --abilities-bar-length:22%;
+  }
+  .abilities__bar--23::after {
+    --abilities-bar-length:23%;
+  }
+  .abilities__bar--24::after {
+    --abilities-bar-length:24%;
+  }
+  .abilities__bar--25::after {
+    --abilities-bar-length:25%;
+  }
+  .abilities__bar--26::after {
+    --abilities-bar-length:26%;
+  }
+  .abilities__bar--27::after {
+    --abilities-bar-length:27%;
+  }
+  .abilities__bar--28::after {
+    --abilities-bar-length:28%;
+  }
+  .abilities__bar--29::after {
+    --abilities-bar-length:29%;
+  }
+  .abilities__bar--30::after {
+    --abilities-bar-length:30%;
+  }
+  .abilities__bar--31::after {
+    --abilities-bar-length:31%;
+  }
+  .abilities__bar--32::after {
+    --abilities-bar-length:32%;
+  }
+  .abilities__bar--33::after {
+    --abilities-bar-length:33%;
+  }
+  .abilities__bar--34::after {
+    --abilities-bar-length:34%;
+  }
+  .abilities__bar--35::after {
+    --abilities-bar-length:35%;
+  }
+  .abilities__bar--36::after {
+    --abilities-bar-length:36%;
+  }
+  .abilities__bar--37::after {
+    --abilities-bar-length:37%;
+  }
+  .abilities__bar--38::after {
+    --abilities-bar-length:38%;
+  }
+  .abilities__bar--39::after {
+    --abilities-bar-length:39%;
+  }
+  .abilities__bar--40::after {
+    --abilities-bar-length:40%;
+  }
+  .abilities__bar--41::after {
+    --abilities-bar-length:41%;
+  }
+  .abilities__bar--42::after {
+    --abilities-bar-length:42%;
+  }
+  .abilities__bar--43::after {
+    --abilities-bar-length:43%;
+  }
+  .abilities__bar--44::after {
+    --abilities-bar-length:44%;
+  }
+  .abilities__bar--45::after {
+    --abilities-bar-length:45%;
+  }
+  .abilities__bar--46::after {
+    --abilities-bar-length:46%;
+  }
+  .abilities__bar--47::after {
+    --abilities-bar-length:47%;
+  }
+  .abilities__bar--48::after {
+    --abilities-bar-length:48%;
+  }
+  .abilities__bar--49::after {
+    --abilities-bar-length:49%;
+  }
+  .abilities__bar--50::after {
+    --abilities-bar-length:50%;
+  }
+  .abilities__bar--51::after {
+    --abilities-bar-length:51%;
+  }
+  .abilities__bar--52::after {
+    --abilities-bar-length:52%;
+  }
+  .abilities__bar--53::after {
+    --abilities-bar-length:53%;
+  }
+  .abilities__bar--54::after {
+    --abilities-bar-length:54%;
+  }
+  .abilities__bar--55::after {
+    --abilities-bar-length:55%;
+  }
+  .abilities__bar--56::after {
+    --abilities-bar-length:56%;
+  }
+  .abilities__bar--57::after {
+    --abilities-bar-length:57%;
+  }
+  .abilities__bar--58::after {
+    --abilities-bar-length:58%;
+  }
+  .abilities__bar--59::after {
+    --abilities-bar-length:59%;
+  }
+  .abilities__bar--60::after {
+    --abilities-bar-length:60%;
+  }
+  .abilities__bar--61::after {
+    --abilities-bar-length:61%;
+  }
+  .abilities__bar--62::after {
+    --abilities-bar-length:62%;
+  }
+  .abilities__bar--63::after {
+    --abilities-bar-length:63%;
+  }
+  .abilities__bar--64::after {
+    --abilities-bar-length:64%;
+  }
+  .abilities__bar--65::after {
+    --abilities-bar-length:65%;
+  }
+  .abilities__bar--66::after {
+    --abilities-bar-length:66%;
+  }
+  .abilities__bar--67::after {
+    --abilities-bar-length:67%;
+  }
+  .abilities__bar--68::after {
+    --abilities-bar-length:68%;
+  }
+  .abilities__bar--69::after {
+    --abilities-bar-length:69%;
+  }
+  .abilities__bar--70::after {
+    --abilities-bar-length:70%;
+  }
+  .abilities__bar--71::after {
+    --abilities-bar-length:71%;
+  }
+  .abilities__bar--72::after {
+    --abilities-bar-length:72%;
+  }
+  .abilities__bar--73::after {
+    --abilities-bar-length:73%;
+  }
+  .abilities__bar--74::after {
+    --abilities-bar-length:74%;
+  }
+  .abilities__bar--75::after {
+    --abilities-bar-length:75%;
+  }
+  .abilities__bar--76::after {
+    --abilities-bar-length:76%;
+  }
+  .abilities__bar--77::after {
+    --abilities-bar-length:77%;
+  }
+  .abilities__bar--78::after {
+    --abilities-bar-length:78%;
+  }
+  .abilities__bar--79::after {
+    --abilities-bar-length:79%;
+  }
+  .abilities__bar--80::after {
+    --abilities-bar-length:80%;
+  }
+  .abilities__bar--81::after {
+    --abilities-bar-length:81%;
+  }
+  .abilities__bar--82::after {
+    --abilities-bar-length:82%;
+  }
+  .abilities__bar--83::after {
+    --abilities-bar-length:83%;
+  }
+  .abilities__bar--84::after {
+    --abilities-bar-length:84%;
+  }
+  .abilities__bar--85::after {
+    --abilities-bar-length:85%;
+  }
+  .abilities__bar--86::after {
+    --abilities-bar-length:86%;
+  }
+  .abilities__bar--87::after {
+    --abilities-bar-length:87%;
+  }
+  .abilities__bar--88::after {
+    --abilities-bar-length:88%;
+  }
+  .abilities__bar--89::after {
+    --abilities-bar-length:89%;
+  }
+  .abilities__bar--90::after {
+    --abilities-bar-length:90%;
+  }
+  .abilities__bar--91::after {
+    --abilities-bar-length:91%;
+  }
+  .abilities__bar--92::after {
+    --abilities-bar-length:92%;
+  }
+  .abilities__bar--93::after {
+    --abilities-bar-length:93%;
+  }
+  .abilities__bar--94::after {
+    --abilities-bar-length:94%;
+  }
+  .abilities__bar--95::after {
+    --abilities-bar-length:95%;
+  }
+  .abilities__bar--96::after {
+    --abilities-bar-length:96%;
+  }
+  .abilities__bar--97::after {
+    --abilities-bar-length:97%;
+  }
+  .abilities__bar--98::after {
+    --abilities-bar-length:98%;
+  }
+  .abilities__bar--99::after {
+    --abilities-bar-length:99%;
+  }
+  .abilities__bar--100::after {
+    --abilities-bar-length:100%;
+  }
+  .abilities__bar--101::after {
+    --abilities-bar-length:101%;
+  }
+  .abilities__bar--102::after {
+    --abilities-bar-length:102%;
+  }
+  .abilities__bar--103::after {
+    --abilities-bar-length:103%;
+  }
+  .abilities__bar--104::after {
+    --abilities-bar-length:104%;
+  }
+  .abilities__bar--105::after {
+    --abilities-bar-length:105%;
+  }
+  .abilities__bar--106::after {
+    --abilities-bar-length:106%;
+  }
+  .abilities__bar--107::after {
+    --abilities-bar-length:107%;
+  }
+  .abilities__bar--108::after {
+    --abilities-bar-length:108%;
+  }
+  .abilities__bar--109::after {
+    --abilities-bar-length:109%;
+  }
+  .abilities__bar--110::after {
+    --abilities-bar-length:110%;
+  }
+  .abilities__bar--111::after {
+    --abilities-bar-length:111%;
+  }
+  .abilities__bar--112::after {
+    --abilities-bar-length:112%;
+  }
+  .abilities__bar--113::after {
+    --abilities-bar-length:113%;
+  }
+  .abilities__bar--114::after {
+    --abilities-bar-length:114%;
+  }
+  .abilities__bar--115::after {
+    --abilities-bar-length:115%;
+  }
+  .abilities__bar--116::after {
+    --abilities-bar-length:116%;
+  }
+  .abilities__bar--117::after {
+    --abilities-bar-length:117%;
+  }
+  .abilities__bar--118::after {
+    --abilities-bar-length:118%;
+  }
+  .abilities__bar--119::after {
+    --abilities-bar-length:119%;
+  }
+  .abilities__bar--120::after {
+    --abilities-bar-length:120%;
+  }
+
+
+.abilities__bar--lent {
+    --abilities-bar-length:30%
+}
+
+.abilities__bar--rapid {
+  --abilities-bar-length:125%
+}
+  
+  
+  @keyframes abilities-bar-fill {
+    to {
+      transform: translateX(var(--abilities-bar-length));
+    }
+  }
