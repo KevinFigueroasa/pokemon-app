@@ -27,11 +27,14 @@ const Pokemons = () => {
     }
 
     const searchByType = (pokemonTypeUrl) => {
-        // alert(pokemonTypeUrl)
         if (pokemonTypeUrl) {
             axios
             .get(pokemonTypeUrl)
             .then(res => setGetPokemons(res.data.pokemon))
+        } else {
+            axios
+            .get(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`)
+            .then(res => setGetPokemons(res.data.results))
         }
     }
 
@@ -110,12 +113,12 @@ const Pokemons = () => {
                 />
                 <button 
                 className='button-search'
-                onClick={searchByName}><i class="fa-solid fa-magnifying-glass"></i></button>
+                onClick={searchByName}><i className="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div className='pagination__container'>
                 <div className='pagination___select'>
-                    <select onChange={e => searchByType(e.target.value)}>
-                        <option value="">Select Pokemon Type...</option>
+                    <select className='select-pokemon' onChange={e => searchByType(e.target.value)}>
+                        <option value="">All pokemons - Select type</option>
                         {
                             pokemonsTypes.map(pokemon => (
                                 <option key={pokemon.url} value={pokemon.url}>{pokemon.name}</option>
@@ -126,14 +129,15 @@ const Pokemons = () => {
                     {
                         numPageNoneSelect &&
                         <button 
+                        className='selected'
                         onClick={() => prev(nPage)}
                         disabled={nPage === 1}
-                        >Previus Page</button>
+                        ><i className="fa-solid fa-angle-left"></i></button>
                     }
 
                     {
                         pageNumbers.map(num => (
-                        <button 
+                        <button
                             key={num}
                             onClick={() => dispatchAction(num)}
                             className={'selected'}
@@ -144,9 +148,9 @@ const Pokemons = () => {
                     
                     {
                         numPageNoneSelect &&
-                        <button onClick={() => next(nPage)}
+                        <button className="selected" onClick={() => next(nPage)}
                         disabled={totalPage2 <= nPage2}
-                        >Next Page</button>
+                        ><i className="fa-solid fa-angle-right"></i></button>
                     }
             </div>
 
@@ -162,6 +166,36 @@ const Pokemons = () => {
                     ))
                 }
             </div>
+            
+            <div>
+            {
+                        numPageNoneSelect &&
+                        <button 
+                        className='selected'
+                        onClick={() => prev(nPage)}
+                        disabled={nPage === 1}
+                        ><i className="fa-solid fa-angle-left"></i></button>
+                    }
+
+                    {
+                        pageNumbers.map(num => (
+                        <button
+                            key={num}
+                            onClick={() => dispatchAction(num)}
+                            className={'selected'}
+                        >{num}
+                        </button>
+                        ))
+                    }
+                    
+                    {
+                        numPageNoneSelect &&
+                        <button className="selected" onClick={() => next(nPage)}
+                        disabled={totalPage2 <= nPage2}
+                        ><i className="fa-solid fa-angle-right"></i></button>
+                    }
+            </div>
+            
         </div>
     );
 };

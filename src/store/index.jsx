@@ -10,7 +10,7 @@ export default configureStore({
         userName: pokeMasterSlice,
         currentPage: currentPageSlice,
         pokemonsPerPage: pokemonsPerPageSlice,
-        numPageNoneIt: numPageNoneSlice,
-        pokemon: pokemonSlice
+        numPageNoneIt: numPageNoneSlice
+        // pokemon: pokemonSlice
     }
 })

@@ -1,0 +1,17 @@
+.pokemon-details-container {
+    display: flex;
+    padding: 60px;
+  }
+  
+  .pokemon-details {
+    width: 50%;
+  }
+  
+  .pokemon-movements {
+    width: 50%;
+  }
+
+  .pokemon-movements ul {
+    display: flex;
+    list-style: none;
+  }

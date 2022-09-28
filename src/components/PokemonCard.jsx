@@ -64,19 +64,19 @@ const PokemonCard = ({url}) => {
                             <div className='abilities__item--container'>
                                 <p className="abilities__speed">ATK: {getPokemon.stats?.[1].base_stat}</p>
                             </div>
-                            <div id='toggle-colors' className={`abilities__bar abilities__bar--${getPokemon.stats?.[1].base_stat <= 30 ? "lent" : getPokemon.stats?.[1].base_stat >=125 ? "rapid" : getPokemon.stats?.[1].base_stat <= 30 ? "lent" : getPokemon.stats?.[1].base_stat}`}></div>
+                            <div id='toggle-colors' className={`abilities__bar abilities__bar--${getPokemon.stats?.[1].base_stat <= 30 ? "lent" : getPokemon.stats?.[1].base_stat >=124 ? "rapid" : getPokemon.stats?.[1].base_stat}`}></div>
                         </div>
                         <div className="abilities__item">
                             <div className='abilities__item--container'>
                                 <p className="abilities__speed">DEF: {getPokemon.stats?.[2].base_stat}</p>
                             </div>
-                            <div className={`abilities__bar abilities__bar--${getPokemon.stats?.[2].base_stat <= 30 ? "lent" : getPokemon.stats?.[2].base_stat >=125 ? "rapid" : getPokemon.stats?.[2].base_stat <= 30 ? "lent" : getPokemon.stats?.[2].base_stat}`}></div>
+                            <div className={`abilities__bar abilities__bar--${getPokemon.stats?.[2].base_stat <= 30 ? "lent" : getPokemon.stats?.[2].base_stat >=124 ? "rapid" : getPokemon.stats?.[2].base_stat}`}></div>
                         </div>
                         <div className="abilities__item">
                             <div className='abilities__item--container'>
                                 <p className="abilities__speed">SPD: {getPokemon.stats?.[5].base_stat}</p>
                             </div>
-                            <div id='toggle-colors' className={`abilities__bar abilities__bar--${getPokemon.stats?.[5].base_stat <= 30 ? "lent" : getPokemon.stats?.[5].base_stat >=125 ? "rapid" : getPokemon.stats?.[5].base_stat <= 30 ? "lent" : getPokemon.stats?.[5].base_stat}`}></div>
+                            <div id='toggle-colors' className={`abilities__bar abilities__bar--${getPokemon.stats?.[5].base_stat <= 30 ? "lent" : getPokemon.stats?.[5].base_stat >=124 ? "rapid" : getPokemon.stats?.[5].base_stat}`}></div>
                         </div>
                     </div>
                 </div>

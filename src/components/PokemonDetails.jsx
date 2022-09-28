@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import '../../src/css/pokemon-details.css'
 
 const PokemonDetails = () => {
 
