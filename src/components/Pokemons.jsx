@@ -101,48 +101,54 @@ const Pokemons = () => {
 
     return (
         <div className='pokemons-container'>
-            <h1>Pokemons</h1>
-            <input type="text"
-            value={inputPokemon}
-            onChange={e => setInputPokemon(e.target.value)}
-            />
-            <p>Bienvenido: {pokeMaster}</p>
-            <button onClick={searchByName}>Search</button>
-            <div>
-                <select onChange={e => searchByType(e.target.value)}>
-                    <option value="">Select Pokemon Type...</option>
+            <h1>POKEDEX</h1>
+            <p>Welcome: {pokeMaster}</p>
+            <div className='search-container'>
+                <input type="text" className='page__search--input'
+                value={inputPokemon}
+                onChange={e => setInputPokemon(e.target.value)}
+                />
+                <button 
+                className='button-search'
+                onClick={searchByName}><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div className='pagination__container'>
+                <div className='pagination___select'>
+                    <select onChange={e => searchByType(e.target.value)}>
+                        <option value="">Select Pokemon Type...</option>
+                        {
+                            pokemonsTypes.map(pokemon => (
+                                <option key={pokemon.url} value={pokemon.url}>{pokemon.name}</option>
+                            ))
+                        }
+                    </select>
+                </div>
                     {
-                        pokemonsTypes.map(pokemon => (
-                            <option key={pokemon.url} value={pokemon.url}>{pokemon.name}</option>
+                        numPageNoneSelect &&
+                        <button 
+                        onClick={() => prev(nPage)}
+                        disabled={nPage === 1}
+                        >Previus Page</button>
+                    }
+
+                    {
+                        pageNumbers.map(num => (
+                        <button 
+                            key={num}
+                            onClick={() => dispatchAction(num)}
+                            className={'selected'}
+                        >{num}
+                        </button>
                         ))
                     }
-                </select>
+                    
+                    {
+                        numPageNoneSelect &&
+                        <button onClick={() => next(nPage)}
+                        disabled={totalPage2 <= nPage2}
+                        >Next Page</button>
+                    }
             </div>
-            {
-                numPageNoneSelect &&
-                <button 
-                onClick={() => prev(nPage)}
-                disabled={nPage === 1}
-                >Previus Page</button>
-            }
-
-            {
-                pageNumbers.map(num => (
-                <button 
-                    key={num}
-                    onClick={() => dispatchAction(num)}
-                    className={'selected'}
-                >{num}
-                </button>
-                ))
-            }
-            
-            {
-                numPageNoneSelect &&
-                <button onClick={() => next(nPage)}
-                disabled={totalPage2 <= nPage2}
-                >Next Page</button>
-            }
 
             <div className='pokemon-cards-container'>
                 {

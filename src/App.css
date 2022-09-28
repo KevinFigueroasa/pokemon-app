@@ -23,6 +23,13 @@
   --color-abilities-bar: rgb(21, 177, 0);
 }
 
+.App {
+  background-color: azure;
+}
+
+.pokemons-container {
+  padding: 90px 0;
+}
 
 #poke-master {
   width: 36%;
@@ -68,11 +75,36 @@
   margin: 0 auto;
 }
 
+.page__search--input {
+    /* width: 50%; */
+    position: relative;
+    padding: 0.9rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    /* box-shadow: 0 0 10px var(--shadow-second); */
+    font-size: 19px;
+    outline: none;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
 .page__form--input:focus{
   outline: 2px solid #D63728;
 }
 
+.page__search--input:focus{
+  outline: 2px solid #D63728;
+}
+
 .login-container {
+  display: flex;
+  margin: 15px auto;
+  position: relative;
+  align-items: center;
+}
+
+.search-container {
   display: flex;
   margin: 15px auto;
   position: relative;
@@ -86,7 +118,19 @@
   border-radius: 50%;
   margin: 0;
   border: none;
-  right: 0;
+  right: -1px;
+  background-color: #D63728;
+  font-weight: bold;
+}
+
+.button-search {
+  position: absolute;
+  right: -1px;
+  color: #fff;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: none;
   background-color: #D63728;
   font-weight: bold;
 }
@@ -95,10 +139,17 @@
   color: #fff;
 }
 
+.fa-magnifying-glass {
+  color: #fff;
+}
+
 /* Tarjetas pokemons */
 
 .pokemons-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: azure;
 }
 
 .pokemon-cards-container {
