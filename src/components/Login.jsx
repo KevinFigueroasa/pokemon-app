@@ -21,7 +21,7 @@ const Login = () => {
         <div className='login'>
             <div className='welcome-trainer'>
                 <h2>Hi, trainer! <br/>You're ready?</h2>
-                <img id='poke-master' src="\src\assets\images\entrenadorPok.png" alt="" />
+                <img id='poke-master' src="public\entrenadorPok.png" alt="" />
             </div>
             {/* <h2>Enter your name to start</h2> */}
             <div className='login-container'>
